@@ -1,0 +1,101 @@
+sudo su -
+yum install -y docker
+systemctl start docker 
+systemctl enable docker
+
+curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
+
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+sudo yum update
+sudo yum install maven
+To install Maven version 3.2.5 on Linux, you can follow these steps:
+================================================================
+wget http://mirror.olnevhost.net/pub/apache/maven/maven-3/3.9.1/binaries/apache-maven-3.9.1-bin.tar.gz
+tar xzf apache-maven-3.9.1-bin.tar.gz
+sudo mv apache-maven-3.9.1 /opt/
+export PATH=/opt/apache-maven-3.9.1/bin:$PATH
+source ~/.bashrc
+==================================================
+mvn -version
+
+sudo yum install git
+git clone https://github.com/KavithaRana/Event-Management-System-Back-end.git
+cd backendapp
+mvn clean
+mvn install -DskipTests
+
+ls
+cd target
+cd ..
+
+===========
+Linux commands : 
+============
+ls = list the contents of a directory
+cd = to change the current working directory
+cd .. = (Exit)used to change the current working directory to the parent directory of the current directory
+
+Esc+i = to write into the file
+Esc+Shift+Colon(:) + wq = to save and exit the file 
+===========
+
+
+
+=================================
+vi Dockerfile :
+-----------------
+ 
+FROM openjdk:17 
+EXPOSE 9090
+ADD target/Matrimony-Application-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
+===================================
+
+
+=============================
+vi docker-compose.yml :
+---------------------
+version: "3.8"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: TEST2
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  app:
+    build: .
+    container_name: myapplication
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/TEST2
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "9090:9090"
+volumes:
+  postgres-data:
+===============================================
+docker-compose up -d
+docker logs myapplication - to see application logs
+docker images =>All images
+docker ps => All runnibg containers
+
+
+
+
+
+
+
+
+
+

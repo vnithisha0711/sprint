@@ -1,0 +1,73 @@
+DevOps & Cloud
+
+-Spring Boot Microservices (clean,Compile,test, build,deploy)
+1. Unit Testing - JUnit -  - Jmokito Build & Deployment tool - Maven/Gradel 
+2. Postman- API Testing
+	Swagger - API Documentation & Testing
+4. SonarQube - Code Analysis, Quality assesment of code\
+5. Version control & Repository Management Tool - Git  
+	- Repositories Management - (local repository - sharepoint)github,bitbucket
+6. CD/CI - Continuous Deployment & Continuous Integration
+		Jenkins - Pipelines & build stages(clean,Compile,test, build,deploy)
+(.jar along with all plugins,tools,softwares,dependent db)
+
+7. Containers - Docker - (docker architecture - dockerhub, images, dockerfile, 				docker container,docker command)
+8. Container Orchectration & Management - K8S (Kubernetes)  -K8S architecture 
+
+9. Cloud - AWS/Azure (AWS basic services, cloud basic , cloud computing basics)
+		- deployment of your spring boot MS in cloud using docker file.
+
+------------------------------------------------------------------
+@Component 
+	-@Service
+	-@Repository
+	-@Controller
+	-@RestController
+------------------------------------------------------------------
+HTTP Methods - @RequestMapping (method="")
+------------------------------------------------------------------
+1. get  - @GetMapping ( Retrive/Select/Search/List)
+2. post - @PostMapping ( Create/Add/Insert)
+3. put  - @PutMapping  ( Update/Modify)
+4. delete - @deleteMapping ( Delete/Remove)
+5. patch  - @PatchMapping ( partial - Update/Modify )
+
+other http methods - connect, option, trace, head
+_____-------------------------------------------------------------
+Flow of spring boot application
+------------------------------------------------------------------
+Parent POM - 
+Starter POM
+Zero XML Configuration - application.properties
+inbulit server
+-----------------------------------------------------------------
+
+how to integrate JPA with spring boot
+1. dependency
+2. application.properties
+3. adding annotation at model - @Entity @Id (mandatory annotations
+4. creating @Repository class and extends JPARepository
+-----------------------------------------------------------------
+
+diff bet JPARepository & CrudRepository
+
+what is actuator - It provides production-ready features such as metrics, health checks, and externalized configuration.
+---
+core modules of spring
+--
+Task given on friday,sat & sunday
+-----
+Udemy Cetification Java 8	Youtube course  (8-9 hrs) - fri -done
+Interview Question on Java, Java 8	 - sat (done)
+Coding programs Java & Java 8  - sat ( done)
+Interview Question on Design Pattern & SOLID Principle	- sat(done by few)
+Interview Question on Spring core & Spring boot	- sun(done by few-ongoing)
+Interview Question on Hibernate/JPA - sun(ongoing)
+Microservices Architectural Diagram - sun(done)
+Spring data JPA	Interview Question on Microservices- sun(done by few-ongoing)
+Microservices Coding youtube Video	(1.5 - 2 hrs) -sun - (few have completed)
+Udemy Cetification Microservices Architecture (4-5 hrs)- sun(ongoing)
+Udemy Cetification Spring boot Microservices (20 hrs)- sun(ongoing)
+
+
+
